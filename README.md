@@ -5,7 +5,7 @@ En el sector de la construcción, la falta de Equipos de Protección Individual 
 
 **Clases detectadas:** `helmet` (casco), `harness` (arnés), `vest` (chaleco), `security shoe` (calzado de seguridad), `person` (persona).
 
-**Enlace al Dataset (Roboflow):** [https://app.roboflow.com/leonardos-workspace-lqb8a/maic_m4t3_epis/models]
+**Enlace al Dataset (Roboflow):** https://app.roboflow.com/leonardos-workspace-lqb8a/maic_m4t3_epis/models
 **Split de datos:** 70% Train Set / 20% Valid Set / 10% Test Set.
 
 ## Resumen de Resultados
@@ -26,4 +26,4 @@ Cualquier persona puede reproducir este experimento sin instalaciones locales si
    * Imgsz (Resolución): 640
    * Entorno probado exitosamente con aceleración de hardware activa.
 
-*Nota: Para hacer inferencia directa sin re-entrenar, puedes cargar los pesos finales `best.pt` [(https://drive.google.com/file/d/1WpDUvikSyeKJZ_2INZaGAziRV7Vq0a2O/view?usp=sharing)]*
+*Nota: Para hacer inferencia directa sin re-entrenar, puedes cargar los pesos finales `best.pt` (https://drive.google.com/file/d/1WpDUvikSyeKJZ_2INZaGAziRV7Vq0a2O/view?usp=sharing)*
