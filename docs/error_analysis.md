@@ -1,16 +1,16 @@
-# Análisis de Errores - Detección de EPIs
+# Análisis de Errores - Tarea M4T3
 
-## Falsos Positivos (3 ejemplos identificados)
-1. **Confusión de color:** El modelo identificó una mochila amarilla fluorescente como si fuera un `vest` (chaleco reflectante).
-2. **Formas similares:** Un cubo de plástico redondo y blanco en el suelo fue clasificado erróneamente como un `helmet` (casco).
-3. **Texturas:** Una bota de calle oscura fue clasificada como `security shoe` al confundirse por la iluminación deficiente.
+## Falsos Positivos (FP) identificados
+1. **Confusión de textura/color:** El modelo detectó un elemento de la estructura pintado de amarillo como un `helmet`. *Por qué:* El color y el reflejo del sol confundieron los filtros convolucionales del modelo.
+2. **Confusión de prendas:** Una chaqueta común de color llamativo fue detectada como `vest`. *Por qué:* El modelo se está guiando más por la intensidad del color que por las bandas reflectantes.
+3. **Objetos de fondo:** Un cubo/balde en el suelo fue clasificado como `helmet`. *Por qué:* Forma geométrica circular muy similar a la vista superior de un casco.
 
-## Falsos Negativos (3 ejemplos identificados)
-1. **Oclusión parcial:** El modelo no detectó el `harness` (arnés) de un trabajador porque estaba de perfil y el arnés quedaba parcialmente oculto por su brazo.
-2. **Falta de contraste:** No se detectó un `helmet` oscuro porque el trabajador estaba en una zona de sombra densa en la obra.
-3. **Distancia:** Un trabajador (`person`) muy al fondo de la imagen no fue detectado por la resolución y la lejanía.
+## Falsos Negativos (FN) identificados
+1. **Oclusión severa:** Un trabajador detrás de un andamio no fue detectado (`person`) y tampoco sus EPIs. *Por qué:* Más del 70% de su cuerpo estaba tapado por tubos metálicos.
+2. **Escala pequeña:** No se detectó un `security shoe` en un trabajador lejano. *Por qué:* Al redimensionar la imagen a 640x640, los píxeles que conforman el zapato se pierden.
+3. **Bajo contraste:** No se detectó un `harness` sobre un trabajador vestido de negro. *Por qué:* Falta de contraste de bordes que el modelo necesita para separar el objeto del fondo.
 
-## Plan de Mejora Prioritaria (Iteración de datos)
-1. Añadir imágenes al dataset donde haya trabajadores parcialmente ocultos por andamios o maquinaria (oclusión).
-2. Incluir fotografías tomadas en condiciones de baja iluminación y alto contraste (sombras duras) para mejorar la robustez.
-3. Incorporar imágenes de "fondo negativo" que contengan objetos redondos o fluorescentes que NO sean EPIs, para enseñarle al modelo a no confundirlos.
+## Mejoras Prioritarias de Datos (Plan de Iteración)
+1. **Aumento de datos (Data Augmentation):** Aplicar variaciones de brillo y contraste extremas en Roboflow para enseñar al modelo a detectar arneses en condiciones de sombra/bajo contraste.
+2. **Etiquetado de oclusiones:** Buscar y etiquetar específicamente fotos de trabajadores operando detrás de mallas, andamios o maquinaria (casos límite).
+3. **Imágenes de fondo (Backgrounds):** Añadir al dataset un 10% de imágenes sin trabajadores pero con elementos de obra (cubos, conos, vallas) sin etiquetar nada, para obligar al modelo a reducir sus Falsos Positivos.
