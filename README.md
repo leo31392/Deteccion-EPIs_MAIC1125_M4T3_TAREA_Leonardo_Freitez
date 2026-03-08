@@ -1,4 +1,4 @@
-# Prototipo AECO CV: Detección de EPIs en Obras
+# Prototipo: Detección de EPIs en Obras
 
 ## Planteamiento del Problema
 En el sector de la construcción, la falta de Equipos de Protección Individual (EPIs) es una de las principales causas de accidentes graves. Este proyecto entrena un modelo de Visión Computacional para auditar visualmente el cumplimiento de normativas de seguridad en tiempo real.
