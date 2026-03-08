@@ -1,12 +1,14 @@
-# Checklist de Gobernanza y Privacidad (Sistemas AECO)
+# Checklist de Gobernanza y Ética AECO
 
-## Privacidad y Consentimiento
-* **Minimización de datos (PII):** El conjunto de datos de imágenes se ha seleccionado evitando la captura de rostros reconocibles en primer plano. No se están recopilando datos biométricos ni matrículas de vehículos.
+## 1. Privacidad y Consentimiento
+Este modelo ha sido entrenado respetando la normativa de privacidad. Las imágenes obtenidas de fuentes públicas o en obra evitan la focalización en rostros reconocibles. No se emplean técnicas de reconocimiento facial ni extracción de datos biométricos de los trabajadores.
 
-## Declaración de Limitaciones Críticas
-* **Condiciones de fallo:** Este modelo reduce su precisión drásticamente en condiciones de baja iluminación, lluvia intensa o cuando los trabajadores están fuertemente ocluidos.
-* **Descargo de responsabilidad vital:** Este sistema de IA es exclusivamente una herramienta asistiva para *screening* preliminar de seguridad. Produce Falsos Negativos. **EN NINGÚN CASO debe utilizarse como el único verificador en decisiones de seguridad vital** ni sustituir la labor del supervisor de prevención de riesgos laborales (PRL) de la obra.
+## 2. Minimización de Datos
+El dataset se centra exclusivamente en la geometría del cuerpo (clase `person`) y la ropa/equipamiento. Cualquier información personal identificable (PII) incidental como matrículas de vehículos o rostros claros debe ser difuminada en un despliegue en producción.
 
-## Riesgos Asociados
-* **Riesgo por FP (Falso Positivo):** Generación de alertas innecesarias que pueden causar "fatiga de alarmas" en el centro de control.
-* **Riesgo por FN (Falso Negativo):** Riesgo crítico donde un trabajador sin EPIs pasa desapercibido. Por esta razón, el umbral de confianza se debe ajustar priorizando el *Recall* sobre la *Precisión*.
+## 3. Declaración de Limitaciones (Cuándo NO usar)
+* **Condiciones climáticas adversas:** El modelo no ha sido probado y no garantiza resultados bajo lluvia intensa, niebla o visión nocturna sin iluminación industrial.
+* **Sustitución humana:** **Bajo ninguna circunstancia** este modelo debe reemplazar al Técnico de Prevención de Riesgos Laborales. Es una herramienta de "segunda opinión" o de monitoreo estadístico, no un sistema de decisión vital autónomo.
+
+## 4. Nota de Riesgos (FN vs FP)
+En el contexto AECO, el costo de un Falso Negativo (no detectar que falta un casco) es inaceptablemente alto porque compromete vidas humanas. Sin embargo, priorizar en exceso evitar Falsos Negativos genera múltiples Falsos Positivos (alarmas falsas), lo que produce "fatiga de alarma" en los operadores, llevándolos a ignorar el sistema. Se requiere ajuste continuo del umbral de confianza según el caso de uso específico en la obra.
