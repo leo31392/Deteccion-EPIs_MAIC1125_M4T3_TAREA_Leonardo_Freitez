@@ -22,7 +22,7 @@
 * **Precisión (P):** 0.855  
 * **Recall (R):** 0.44
 * **mAP50:** 0.517 (Tu nota global, 51.7%, requiere mejorar el entrenamiento).
-* 
+  
 **Conclusiones Clave:** 1. El modelo tiene una alta Precisión (85.5%), es decir, cuando detecta un EPI, es muy confiable.
 2. El Recall es bajo (44%), indicando que a la IA le cuesta encontrar *todos* los EPIs presentes, probablemente debido a oclusión o tamaño pequeño de objetos (como los zapatos).
 3. Las clases `helmet` y `person` tienen el mejor rendimiento, mientras que `harness` necesita más volumen de datos.
