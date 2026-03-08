@@ -1,5 +1,9 @@
 # Prototipo: Detección de EPIs en Obras
 
+## Entregables (Parte B)
+* [Presentación de Diapositivas (PDF)](docs/Presentacion_Leonardo_Freitez.pdf)
+* [Mini-Informe Ejecutivo (PDF)](docs/Mini_Informe_Leonardo_Freitez.pdf)
+
 ## 1. Planteamiento del Problema y Criterios de Éxito
 **Problema:** En las obras de construcción, el incumplimiento del uso de Equipos de Protección Individual (EPIs) es una causa crítica de accidentes. Este proyecto busca automatizar el la deteccion visual de trabajadores para detectar si portan correctamente sus equipos de seguridad, reduciendo el trabajo manual del supervisor de prevención.
 **Criterio de éxito:** Lograr un modelo con un *Recall* alto que minimice los Falsos Negativos (evitar que un trabajador desprotegido pase desapercibido).
