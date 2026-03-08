@@ -1,8 +1,8 @@
 # Análisis de Errores - Tarea M4T3
 
 ## Falsos Positivos (FP) identificados
-1. **Confusión de textura/color:** El modelo detectó un elemento de la estructura pintado de amarillo como un `helmet`. *Por qué:* El color y el reflejo del sol confundieron los filtros convolucionales del modelo.
-2. **Confusión de prendas:** Una chaqueta común de color llamativo fue detectada como `vest`. *Por qué:* El modelo se está guiando más por la intensidad del color que por las bandas reflectantes.
+1. **Confusión de textura/color:** El modelo detectó elementos reflejantes como si fueran helmet.
+2. **Confusión de prendas:** Chalecos ceñidos al cuerpo no fueron catalogados como vest.
 3. **Objetos de fondo:** Un cubo/balde en el suelo fue clasificado como `helmet`. *Por qué:* Forma geométrica circular muy similar a la vista superior de un casco.
 
 ## Falsos Negativos (FN) identificados
